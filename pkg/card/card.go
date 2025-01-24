@@ -3,6 +3,8 @@ package card
 
 type Card uint8
 type Suit uint8
+
+// Rank index is the card number - 2. Eg a four is index 2.
 type Rank uint8
 
 const (
@@ -13,8 +15,7 @@ const (
 )
 
 const (
-	Ace Rank = iota
-	Two
+	Two Rank = iota
 	Three
 	Four
 	Five
@@ -26,6 +27,7 @@ const (
 	Jack
 	Queen
 	King
+	Ace
 )
 
 // Suit returns the suit of the card
@@ -50,7 +52,7 @@ func IsValidCard(c Card) bool {
 
 // String returns a human-readable representation of the card
 func (c Card) String() string {
-	ranks := []string{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"}
+	ranks := []string{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
 	suits := []string{"♠", "♥", "♦", "♣"}
 	return ranks[c.Rank()] + suits[c.Suit()]
 }

@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/dgunzy/card/pkg/card"
-	"github.com/dgunzy/card/pkg/deck.go"
+	"github.com/dgunzy/card/pkg/deck"
 )
 
 func TestNew(t *testing.T) {
@@ -115,10 +115,10 @@ func TestCardProperties(t *testing.T) {
 		rank     card.Rank
 		expected card.Card
 	}{
-		{card.Spades, card.Ace, 0},      // (0 * 13) + 0 = 0
-		{card.Hearts, card.King, 25},    // (1 * 13) + 12 = 25
-		{card.Diamonds, card.Queen, 37}, // (2 * 13) + 11 = 37
-		{card.Clubs, card.Ten, 48},      // (3 * 13) + 9 = 48
+		{card.Spades, card.Ace, 12},     // (0 * 13) + 12 = 12
+		{card.Hearts, card.King, 24},    // (1 * 13) + 11 = 24
+		{card.Diamonds, card.Queen, 36}, // (2 * 13) + 10 = 36
+		{card.Clubs, card.Ten, 47},      // (3 * 13) + 8 = 47
 	}
 
 	for _, tc := range testCases {
